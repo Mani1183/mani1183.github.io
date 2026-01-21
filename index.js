@@ -1,32 +1,40 @@
-/* =========================
-   Mobile Navbar Toggle
-========================= */
-const menuBtn = document.getElementById("menuBtn");
-const mobileMenu = document.getElementById("mobileMenu");
+document.addEventListener("DOMContentLoaded", () => {
 
-if (menuBtn && mobileMenu) {
-  menuBtn.addEventListener("click", () => {
-    mobileMenu.classList.toggle("hidden");
+  /* =========================
+     Mobile Menu Toggle
+  ========================= */
+  const menuBtn = document.getElementById("menuBtn");
+  const mobileMenu = document.getElementById("mobileMenu");
+
+  if (menuBtn && mobileMenu) {
+    menuBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+
+      // Toggle icon
+      menuBtn.innerHTML = mobileMenu.classList.contains("hidden")
+        ? '<ion-icon name="menu-outline"></ion-icon>'
+        : '<ion-icon name="close-outline"></ion-icon>';
+    });
+  }
+
+  /* Close menu when link clicked */
+  mobileMenu?.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      mobileMenu.classList.add("hidden");
+      menuBtn.innerHTML = '<ion-icon name="menu-outline"></ion-icon>';
+    });
   });
-}
 
-/* Close menu on link click */
-mobileMenu?.querySelectorAll("a").forEach(link => {
-  link.addEventListener("click", () => {
-    mobileMenu.classList.add("hidden");
+  /* Mobile Hire Me */
+  document.getElementById("hireMeBtnMobile")?.addEventListener("click", () => {
+    window.open("https://linkedin.com/in/sharmanish11", "_blank");
   });
-});
 
-/* Mobile Hire Me */
-document.getElementById("hireMeBtnMobile")?.addEventListener("click", () => {
-  window.open("https://linkedin.com/in/sharmanish11", "_blank");
-});
+  /* Mobile Theme Toggle */
+  document.getElementById("themeToggleMobile")?.addEventListener("click", () => {
+    document.documentElement.classList.toggle("light");
+  });
 
-/* Mobile Theme Toggle */
-document.getElementById("themeToggleMobile")?.addEventListener("click", () => {
-  html.classList.toggle("light");
-  const isLight = html.classList.contains("light");
-  localStorage.setItem("theme", isLight ? "light" : "dark");
 });
 
 // Theme Toggle
