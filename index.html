@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Manish Kumar | Portfolio</title>
+
+  <meta name="description" content="Manish Kumar – Full Stack Web Developer">
+  <meta name="author" content="Manish Kumar">
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Icons -->
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-gray-900 text-gray-100">
+
+<!-- HEADER -->
+<header class="sticky top-0 bg-gray-900/90 backdrop-blur border-b border-gray-800 z-50">
+  <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+    <a href="#home" class="text-2xl font-bold">Manish Kumar</a>
+
+    <div class="flex items-center gap-4">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+      <button id="themeToggle" class="text-xl">🌙</button>
+      <button id="hireMeBtn" class="btn-primary">Hire Me</button>
+    </div>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section id="home" class="container mx-auto px-6 py-20 flex flex-col md:flex-row items-center gap-12">
+  <div class="md:w-1/2 space-y-6">
+    <h1 class="text-5xl font-extrabold">
+      Hi, I'm <span class="gradient-text">Manish Kumar</span>
+    </h1>
+
+    <p class="text-gray-400">
+      Full Stack Web Developer building modern, scalable, and high-performance web applications.
+    </p>
+
+    <!-- SOCIAL -->
+    <div class="flex flex-col gap-4 max-w-sm">
+      <a href="https://github.com/mani1183" target="_blank"
+         class="bg-gray-800 px-5 py-3 rounded-lg flex items-center gap-3 hover:bg-gray-700">
+        <ion-icon name="logo-github" class="text-2xl"></ion-icon>
+        <span id="github-stats">View GitHub</span>
+      </a>
+
+      <a href="https://linkedin.com/in/sharmanish11" target="_blank"
+         class="bg-blue-700 px-5 py-3 rounded-lg flex items-center gap-3 hover:bg-blue-600">
+        <ion-icon name="logo-linkedin" class="text-2xl"></ion-icon>
+        <span>View LinkedIn</span>
+      </a>
+    </div>
+
+    <!-- RESUME -->
+    <a href="https://drive.google.com/uc?export=download&id=1UHfeWMCeRPvCcnWj-RoDDsJABiX6jRPb"
+       target="_blank"
+       class="btn-primary inline-flex items-center mt-4">
+      <ion-icon name="download-outline" class="mr-2"></ion-icon>
+      Download Resume
+    </a>
+  </div>
+
+  <div class="md:w-1/2 flex justify-center">
+    <img src="https://github.com/mani1183.png"
+         alt="Manish Kumar"
+         class="rounded-full border-4 border-blue-500 w-72 h-72 object-cover shadow-xl">
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="py-20 bg-gray-800/30">
+  <h2 class="section-title text-center">Professional Summary</h2>
+
+  <p class="max-w-3xl mx-auto text-gray-300 text-center leading-relaxed">
+    Full Stack Web Developer with hands-on experience in MERN stack development.
+    Skilled in building responsive, user-focused, and scalable applications with
+    strong emphasis on clean code and performance.
+  </p>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="py-20">
+  <h2 class="section-title text-center">Skills</h2>
+
+  <div class="max-w-5xl mx-auto mt-12 flex flex-wrap gap-3 justify-center">
+    <span class="skill">HTML5</span>
+    <span class="skill">CSS3</span>
+    <span class="skill">JavaScript</span>
+    <span class="skill">Tailwind</span>
+    <span class="skill">Bootstrap</span>
+    <span class="skill">PHP</span>
+    <span class="skill">Node.js</span>
+    <span class="skill">Express</span>
+    <span class="skill">React</span>
+    <span class="skill">Next.js</span>
+    <span class="skill">MongoDB</span>
+    <span class="skill">MySQL</span>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="py-20">
+  <h2 class="section-title text-center">Projects</h2>
+  <div id="projects-container"
+       class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 mt-12">
+    <p class="col-span-full text-center text-gray-400">Loading projects…</p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="py-20">
+  <h2 class="section-title text-center">Contact Me</h2>
+
+  <div class="max-w-2xl mx-auto bg-gray-800 p-8 rounded-lg">
+    <form id="contact-form" class="space-y-6">
+      <input class="input" placeholder="Your Name" required>
+      <input class="input" type="email" placeholder="Your Email" required>
+      <textarea class="input" rows="5" placeholder="Your Message" required></textarea>
+      <button class="btn-primary w-full">Send Message</button>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-gray-800 border-t border-gray-700 py-8 text-center">
+  <div class="flex justify-center gap-6 mb-4">
+    <a href="https://github.com/mani1183" target="_blank" class="text-3xl">
+      <ion-icon name="logo-github"></ion-icon>
+    </a>
+    <a href="https://linkedin.com/in/sharmanish11" target="_blank" class="text-3xl">
+      <ion-icon name="logo-linkedin"></ion-icon>
+    </a>
+  </div>
+  <p class="text-gray-400">© 2026 Manish Kumar</p>
+</footer>
+
+<!-- MESSAGE -->
+<div id="message-box" class="message-box">
+  <span id="message-text"></span>
+</div>
+
+<script src="index.js"></script>
+</body>
+</html>

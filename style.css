@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+}
+
+.btn-primary {
+  background: #2563eb;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: #3b82f6;
+  box-shadow: 0 0 15px rgba(59,130,246,0.8);
+  transform: translateY(-2px);
+}
+
+.skill {
+  background: #1f2937;
+  padding: 0.6rem 1.2rem;
+  border-radius: 999px;
+  transition: 0.3s;
+}
+
+.skill:hover {
+  background: #2563eb;
+  box-shadow: 0 0 10px rgba(59,130,246,0.6);
+}
+
+.input {
+  width: 100%;
+  padding: 0.75rem;
+  background: #374151;
+  border-radius: 0.5rem;
+  outline: none;
+}
+
+.message-box {
+  position: fixed;
+  bottom: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #10b981;
+  color: white;
+  padding: 1rem 1.5rem;
+  border-radius: 0.5rem;
+  transition: 0.5s;
+}
+
+.message-box.show {
+  bottom: 20px;
+}
+
+/* LIGHT MODE */
+html.light body {
+  background: #f9fafb;
+  color: #111827;
+}
+
+html.light .bg-gray-800,
+html.light .bg-gray-900 {
+  background: #ffffff !important;
+}
