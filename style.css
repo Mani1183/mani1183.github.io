@@ -44,6 +44,17 @@ body {
   transform: translateY(-2px);
 }
 
+.typewriter {
+      overflow: hidden;
+      border-right: .15em solid #3b82f6;
+      white-space: nowrap;
+      animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+    }
+
+    @keyframes typing { from { width: 0 } to { width: 100% } }
+    @keyframes blink-caret { from, to { border-color: transparent } 50% { border-color: #3b82f6; } }
+
+
 .skill {
   background: #1f2937;
   padding: 0.6rem 1.2rem;

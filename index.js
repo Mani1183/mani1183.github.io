@@ -62,14 +62,14 @@ document.addEventListener("DOMContentLoaded", () => {
       // ADMIN EMAIL
       await emailjs.sendForm(
         "service_e989zh8",
-        "template_8dbqjhk",
+        "template_8ukiccr",
         form
       );
 
       // AUTO-REPLY EMAIL
       await emailjs.sendForm(
         "service_e989zh8",
-        "template_2krdwir",
+        "template_mlwpbjw",
         form
       );
 
