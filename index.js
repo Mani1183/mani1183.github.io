@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
       try {
         await emailjs.sendForm(
           "service_e989zh8",     // ✅ Service ID
-          "template_8dbqjhk",    // ✅ Template ID (Admin)
+          "template_mlwpbjw",    // ✅ Template ID (Admin)
           form,
           "A_s_StaRloickiciaKVwC" // ✅ REQUIRED public key AGAIN
         );
@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
         success.classList.remove("hidden");
 
       } catch (error) {
-        alert("❌ Failed to send message. Check EmailJS settings.");
+        alert("❌ Failed to send message.");
         console.error("EmailJS Error:", error);
       }
     });
