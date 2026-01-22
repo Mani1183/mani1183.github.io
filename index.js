@@ -1,83 +1,111 @@
-// =======================
-// EmailJS Init
-// =======================
 (function () {
-  emailjs.init("A_s_StaRloickiciaKVwC"); // ✅ Public Key
+  emailjs.init("A_s_StaRloickiciaKVwC");
 })();
 
 document.addEventListener("DOMContentLoaded", () => {
-
+  
   /* =========================
-     Mobile Menu
+     Scroll Reveal Observer
   ========================= */
-  const menuBtn = document.getElementById("menuBtn");
-  const mobileMenu = document.getElementById("mobileMenu");
-
-  if (menuBtn && mobileMenu) {
-    menuBtn.addEventListener("click", () => {
-      mobileMenu.classList.toggle("hidden");
+  const revealCallback = (entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('active');
     });
-  }
+  };
 
-  /* =========================
-     Hire Me Button
-  ========================= */
-  document.getElementById("hireMeBtn")?.addEventListener("click", () => {
-    window.open("https://linkedin.com/in/sharmanish11", "_blank");
+  const observer = new IntersectionObserver(revealCallback, { threshold: 0.1 });
+  document.querySelectorAll('section').forEach(section => {
+    section.classList.add('reveal');
+    observer.observe(section);
   });
 
   /* =========================
-     CONTACT FORM (EmailJS)
+     Skill Filtering
   ========================= */
-  const form = document.getElementById("contact-form");
-  const success = document.getElementById("form-success");
+  const filterBtns = document.querySelectorAll(".filter-btn");
+  const skills = document.querySelectorAll(".skill-item");
 
-  if (form) {
-    form.addEventListener("submit", async (e) => {
-      e.preventDefault();
-
-      try {
-        await emailjs.sendForm(
-          "service_e989zh8",     // ✅ Service ID
-          "template_mlwpbjw",    // ✅ Template ID (Admin)
-          form,
-          "A_s_StaRloickiciaKVwC" // ✅ REQUIRED public key AGAIN
-        );
-
-        form.reset();
-        success.classList.remove("hidden");
-
-      } catch (error) {
-        alert("❌ Failed to send message.");
-        console.error("EmailJS Error:", error);
+  const filterSkills = (filter) => {
+    skills.forEach(skill => {
+      if (skill.classList.contains(filter)) {
+        skill.classList.remove("hidden");
+        skill.style.display = "flex";
+      } else {
+        skill.classList.add("hidden");
+        setTimeout(() => { if(skill.classList.contains("hidden")) skill.style.display = "none"; }, 400);
       }
     });
-  }
+  };
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+      filterBtns.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      filterSkills(btn.getAttribute("data-filter"));
+    });
+  });
+
+  filterSkills("frontend");
 
   /* =========================
-     GitHub Projects
+     Timeline Toggle
   ========================= */
-  fetch("https://api.github.com/users/mani1183/repos")
-    .then(res => res.json())
-    .then(repos => {
-      const container = document.getElementById("projects-container");
-      if (!container) return;
+  const toggleBtns = document.querySelectorAll(".toggle-btn");
+  const groups = document.querySelectorAll(".timeline-group");
 
-      container.innerHTML = "";
-      repos
-        .filter(repo => !repo.fork)
-        .slice(0, 4)
-        .forEach(repo => {
-          container.innerHTML += `
-            <div class="bg-gray-800 p-5 rounded-lg hover:shadow-lg transition">
-              <h3 class="font-semibold mb-1">${repo.name}</h3>
-              <p class="text-gray-400 mb-2">${repo.description || "No description"}</p>
-              <a href="${repo.html_url}" target="_blank" class="text-blue-400 hover:underline">
-                View on GitHub
-              </a>
-            </div>
-          `;
-        });
+  toggleBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+      toggleBtns.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      const target = btn.getAttribute("data-target");
+      groups.forEach(g => g.id === target ? g.classList.remove("hidden") : g.classList.add("hidden"));
     });
+  });
 
+  /* =========================
+     GitHub API
+  ========================= */
+  const fetchGitHub = async () => {
+    try {
+      const res = await fetch("https://api.github.com/users/mani1183/repos?sort=updated&per_page=6");
+      const repos = await res.json();
+      const container = document.getElementById("projects-container");
+      
+      if (!repos.length) return;
+      container.innerHTML = "";
+
+      repos.filter(r => !r.fork).slice(0, 4).forEach(repo => {
+        container.innerHTML += `
+          <div class="card-bg rounded-2xl p-8 flex flex-col justify-between group">
+            <div>
+              <div class="flex justify-between items-start mb-4">
+                <ion-icon name="folder-open-outline" class="text-3xl text-blue-400"></ion-icon>
+                <div class="flex gap-3">
+                  <a href="${repo.html_url}" target="_blank"><ion-icon name="logo-github" class="text-xl hover:text-white transition"></ion-icon></a>
+                </div>
+              </div>
+              <h3 class="text-xl font-bold mb-2 group-hover:text-blue-400 transition">${repo.name}</h3>
+              <p class="text-gray-400 text-sm mb-6">${repo.description || "Building something amazing with modern tech."}</p>
+            </div>
+            <div class="flex items-center gap-4 text-xs font-mono text-gray-500">
+               <span class="flex items-center gap-1"><span class="w-3 h-3 rounded-full bg-blue-500"></span> ${repo.language || 'Code'}</span>
+               <span>⭐ ${repo.stargazers_count}</span>
+            </div>
+          </div>`;
+      });
+    } catch (e) {
+      console.error("GitHub Fetch Failed");
+    }
+  };
+  fetchGitHub();
+
+  /* =========================
+     Mobile Menu Logic
+  ========================= */
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
 });
