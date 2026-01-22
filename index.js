@@ -58,18 +58,6 @@ document.getElementById("hireMeBtn").onclick = () => {
   window.open("https://linkedin.com/in/sharmanish11", "_blank");
 };
 
-// Contact form UI
-const form = document.getElementById("contact-form");
-const msgBox = document.getElementById("message-box");
-const msgText = document.getElementById("message-text");
-
-form.addEventListener("submit", e => {
-  e.preventDefault();
-  msgText.textContent = "✅ Message sent successfully!";
-  msgBox.classList.add("show");
-  form.reset();
-  setTimeout(() => msgBox.classList.remove("show"), 4000);
-});
 
 /* =========================
    Contact Form (AJAX)
