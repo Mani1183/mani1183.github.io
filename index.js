@@ -60,35 +60,33 @@ document.getElementById("hireMeBtn").onclick = () => {
 
 
 /* =========================
-   Contact Form (AJAX)
+   Contact Form
 ========================= */
+(function () {
+  emailjs.init("A_s_StaRloickiciaKVwC");
+})();
+
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("contact-form");
   const successMsg = document.getElementById("form-success");
 
-  if (!form) return;
-
-  form.addEventListener("submit", async (e) => {
+  form.addEventListener("submit", function (e) {
     e.preventDefault();
 
-    try {
-      const res = await fetch(form.action, {
-        method: "POST",
-        body: new FormData(form),
-        headers: { Accept: "application/json" }
-      });
-
-      if (res.ok) {
-        form.reset();
-        successMsg.classList.remove("hidden");
-      } else {
-        alert("Formspree rejected the submission.");
-      }
-    } catch {
-      alert("Network error.");
-    }
+    emailjs.sendForm(
+      "service_e989zh8",
+      "template_2krdwir",
+      this
+    ).then(() => {
+      form.reset();
+      successMsg.classList.remove("hidden");
+    }, (error) => {
+      alert("Failed to send message. Try again.");
+      console.error(error);
+    });
   });
 });
+
 
 
 
