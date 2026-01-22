@@ -52,35 +52,32 @@ document.addEventListener("DOMContentLoaded", () => {
   /* =========================
      Contact Form (ADMIN + AUTO-REPLY)
   ========================= */
+
+  (function () {
+  emailjs.init("A_s_StaRloickiciaKVwC");
+})();
+
+document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("contact-form");
   const successMsg = document.getElementById("form-success");
 
-  form?.addEventListener("submit", async (e) => {
+  form.addEventListener("submit", function (e) {
     e.preventDefault();
 
-    try {
-      // ADMIN EMAIL
-      await emailjs.sendForm(
-        "service_e989zh8",
+    emailjs.sendForm(
+      "service_e989zh8",
         "template_8ukiccr",
-        form
-      );
-
-      // AUTO-REPLY EMAIL
-      await emailjs.sendForm(
-        "service_e989zh8",
-        "template_mlwpbjw",
-        form
-      );
-
+      this
+    ).then(() => {
       form.reset();
       successMsg.classList.remove("hidden");
-
-    } catch (err) {
-      console.error("EmailJS Error:", err);
-      alert("❌ Failed to send message. Check console & template settings.");
-    }
+    }, (error) => {
+      alert("Failed to send message. Try again.");
+      console.error(error);
+    });
   });
+});
+
 
   /* =========================
      GitHub Stats
