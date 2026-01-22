@@ -2,7 +2,7 @@
 
 :root {
   --primary: #3b82f6;
-  --accent: #367ae1;
+  --accent: #3655e1;
   --bg-dark: #0f172a;
   --card-bg: rgba(30, 41, 59, 0.7);
 }
@@ -14,7 +14,7 @@ body {
 }
 
 .gradient-text {
-  background: linear-gradient(135deg, #60a5fa, #888888);
+  background: linear-gradient(135deg, #60a5fa, #3644e1);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -65,8 +65,7 @@ body {
   display: flex; align-items: center; justify-content: center;
   color: white; font-size: 1.3rem;
   transition: 0.3s;
-  background: var(--accent); /* Harmonized color */
-  box-shadow: 0 4px 10px rgba(139, 92, 246, 0.3);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 @media (min-width: 640px) {
