@@ -19,7 +19,6 @@ body {
   }
 }
 
-
 .gradient-text {
   background: linear-gradient(90deg, #3b82f6, #8b5cf6);
   -webkit-background-clip: text;
@@ -80,6 +79,22 @@ body {
 .message-box.show {
   bottom: 20px;
 }
+
+.loader {
+  width: 18px;
+  height: 18px;
+  border: 3px solid #fff;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 
 /* LIGHT MODE */
 html.light body {

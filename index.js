@@ -71,6 +71,48 @@ form.addEventListener("submit", e => {
   setTimeout(() => msgBox.classList.remove("show"), 4000);
 });
 
+/* =========================
+   Contact Form (AJAX)
+========================= */
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("contact-form");
+  const successMsg = document.getElementById("form-success");
+  const spinner = document.getElementById("spinner");
+  const btnText = document.getElementById("btn-text");
+
+  if (!form) return;
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault(); // 🚨 THIS STOPS REDIRECT
+
+    spinner.classList.remove("hidden");
+    btnText.textContent = "Sending...";
+
+    try {
+      const response = await fetch(form.action, {
+        method: "POST",
+        body: new FormData(form),
+        headers: {
+          "Accept": "application/json"
+        }
+      });
+
+      if (response.ok) {
+        form.reset();
+        successMsg.classList.remove("hidden");
+      } else {
+        alert("❌ Failed to send message. Please try again.");
+      }
+    } catch (err) {
+      alert("❌ Network error. Try again later.");
+    }
+
+    spinner.classList.add("hidden");
+    btnText.textContent = "Send Message";
+  });
+});
+
+
 // GitHub stats
 fetch("https://api.github.com/users/mani1183")
   .then(res => res.json())
