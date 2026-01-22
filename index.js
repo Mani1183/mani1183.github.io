@@ -70,22 +70,34 @@ document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("contact-form");
   const successMsg = document.getElementById("form-success");
 
-  form.addEventListener("submit", function (e) {
+  form.addEventListener("submit", async function (e) {
     e.preventDefault();
 
-    emailjs.sendForm(
-      "service_e989zh8",
-      "template_2krdwir",
-      this
-    ).then(() => {
+    try {
+      // 1️⃣ Send email to YOU (admin)
+      await emailjs.sendForm(
+        "service_e989zh8",
+        "template_8dbqjhk", // ADMIN TEMPLATE
+        this
+      );
+
+      // 2️⃣ Send AUTO-REPLY to USER
+      await emailjs.sendForm(
+        "service_e989zh8",
+        "template_2krdwir", // 👈 REPLACE THIS
+        this
+      );
+
       form.reset();
       successMsg.classList.remove("hidden");
-    }, (error) => {
-      alert("Failed to send message. Try again.");
-      console.error(error);
-    });
+
+    } catch (error) {
+      alert("❌ Failed to send message. Please try again.");
+      console.error("EmailJS Error:", error);
+    }
   });
 });
+
 
 
 
