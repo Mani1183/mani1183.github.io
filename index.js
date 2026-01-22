@@ -1,8 +1,8 @@
-// =========================
-// EmailJS Init (ONLY ONCE)
-// =========================
+// =======================
+// EmailJS Init
+// =======================
 (function () {
-  emailjs.init("A_s_StaRloickiciaKVwC");
+  emailjs.init("A_s_StaRloickiciaKVwC"); // ✅ Public Key
 })();
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -16,46 +16,21 @@ document.addEventListener("DOMContentLoaded", () => {
   if (menuBtn && mobileMenu) {
     menuBtn.addEventListener("click", () => {
       mobileMenu.classList.toggle("hidden");
-      menuBtn.innerHTML = mobileMenu.classList.contains("hidden")
-        ? '<ion-icon name="menu-outline"></ion-icon>'
-        : '<ion-icon name="close-outline"></ion-icon>';
     });
   }
-
-  mobileMenu?.querySelectorAll("a").forEach(link => {
-    link.addEventListener("click", () => {
-      mobileMenu.classList.add("hidden");
-      menuBtn.innerHTML = '<ion-icon name="menu-outline"></ion-icon>';
-    });
-  });
 
   /* =========================
-     Theme Toggle
+     Hire Me Button
   ========================= */
-  const toggleBtn = document.getElementById("themeToggle");
-  const html = document.documentElement;
-
-  if (localStorage.getItem("theme") === "light") {
-    html.classList.add("light");
-    toggleBtn.textContent = "☀️";
-  }
-
-  toggleBtn?.addEventListener("click", () => {
-    html.classList.toggle("light");
-    const isLight = html.classList.contains("light");
-    toggleBtn.textContent = isLight ? "☀️" : "🌙";
-    localStorage.setItem("theme", isLight ? "light" : "dark");
-  });
-
   document.getElementById("hireMeBtn")?.addEventListener("click", () => {
     window.open("https://linkedin.com/in/sharmanish11", "_blank");
   });
 
   /* =========================
-     Contact Form (EmailJS)
+     CONTACT FORM (EmailJS)
   ========================= */
   const form = document.getElementById("contact-form");
-  const successMsg = document.getElementById("form-success");
+  const success = document.getElementById("form-success");
 
   if (form) {
     form.addEventListener("submit", async (e) => {
@@ -63,30 +38,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
       try {
         await emailjs.sendForm(
-          "service_e989zh8",
-          "template_8dbqjhk", // ✅ USE EXISTING TEMPLATE
-          form
+          "service_e989zh8",     // ✅ Service ID
+          "template_8dbqjhk",    // ✅ Template ID (Admin)
+          form,
+          "A_s_StaRloickiciaKVwC" // ✅ REQUIRED public key AGAIN
         );
 
         form.reset();
-        successMsg.classList.remove("hidden");
+        success.classList.remove("hidden");
 
       } catch (error) {
-        console.error("EmailJS Error:", error);
         alert("❌ Failed to send message. Check EmailJS settings.");
+        console.error("EmailJS Error:", error);
       }
     });
   }
-
-  /* =========================
-     GitHub Stats
-  ========================= */
-  fetch("https://api.github.com/users/mani1183")
-    .then(res => res.json())
-    .then(data => {
-      document.getElementById("github-stats").textContent =
-        `${data.public_repos} Repos • ${data.followers} Followers`;
-    });
 
   /* =========================
      GitHub Projects
@@ -95,18 +61,23 @@ document.addEventListener("DOMContentLoaded", () => {
     .then(res => res.json())
     .then(repos => {
       const container = document.getElementById("projects-container");
-      container.innerHTML = "";
+      if (!container) return;
 
-      repos.filter(r => !r.fork).slice(0, 4).forEach(repo => {
-        container.innerHTML += `
-          <div class="bg-gray-800 rounded-xl p-6 hover:shadow-xl transition">
-            <h3 class="text-xl font-semibold mb-2">${repo.name}</h3>
-            <p class="text-gray-400 mb-4">${repo.description || "No description"}</p>
-            <a href="${repo.html_url}" target="_blank"
-               class="text-blue-400 hover:underline">View on GitHub</a>
-          </div>
-        `;
-      });
+      container.innerHTML = "";
+      repos
+        .filter(repo => !repo.fork)
+        .slice(0, 4)
+        .forEach(repo => {
+          container.innerHTML += `
+            <div class="bg-gray-800 p-5 rounded-lg hover:shadow-lg transition">
+              <h3 class="font-semibold mb-1">${repo.name}</h3>
+              <p class="text-gray-400 mb-2">${repo.description || "No description"}</p>
+              <a href="${repo.html_url}" target="_blank" class="text-blue-400 hover:underline">
+                View on GitHub
+              </a>
+            </div>
+          `;
+        });
     });
 
 });
