@@ -109,3 +109,24 @@ document.addEventListener("DOMContentLoaded", () => {
     mobileMenu.classList.toggle('hidden');
   });
 });
+
+const themeToggle = document.getElementById('themeToggle');
+const themeToggleMobile = document.getElementById('themeToggleMobile');
+const body = document.body;
+
+// Function to toggle theme
+const toggleTheme = () => {
+  // 1. Toggle a 'light-mode' class on the body
+  body.classList.toggle('bg-gray-900');
+  body.classList.toggle('bg-white');
+  body.classList.toggle('text-gray-100');
+  body.classList.toggle('text-gray-900');
+
+  // 2. Change the icon (Optional)
+  const isDark = body.classList.contains('bg-gray-900');
+  themeToggle.innerHTML = isDark ? '⏾' : '☀';
+  themeToggleMobile.innerHTML = isDark ? '⏾' : '☀';
+};
+
+themeToggle.addEventListener('click', toggleTheme);
+themeToggleMobile.addEventListener('click', toggleTheme);
