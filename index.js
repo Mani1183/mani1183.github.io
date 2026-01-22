@@ -59,48 +59,48 @@ document.getElementById("hireMeBtn").onclick = () => {
 };
 
 
-/* =========================
-   Contact Form (AJAX)
-========================= */
-document.addEventListener("DOMContentLoaded", () => {
-  const form = document.getElementById("contact-form");
-  const successMsg = document.getElementById("form-success");
-  const spinner = document.getElementById("spinner");
-  const btnText = document.getElementById("btn-text");
+// /* =========================
+//    Contact Form (AJAX)
+// ========================= */
+// document.addEventListener("DOMContentLoaded", () => {
+//   const form = document.getElementById("contact-form");
+//   const successMsg = document.getElementById("form-success");
+//   const spinner = document.getElementById("spinner");
+//   const btnText = document.getElementById("btn-text");
 
-  if (!form) return;
+//   if (!form) return;
 
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault();
+//   form.addEventListener("submit", async (e) => {
+//     e.preventDefault();
 
-    spinner.classList.remove("hidden");
-    btnText.textContent = "Sending...";
+//     spinner.classList.remove("hidden");
+//     btnText.textContent = "Sending...";
 
-    try {
-      const response = await fetch(form.action, {
-        method: "POST",
-        body: new FormData(form),
-        headers: { "Accept": "application/json" }
-      });
+//     try {
+//       const response = await fetch(form.action, {
+//         method: "POST",
+//         body: new FormData(form),
+//         headers: { "Accept": "application/json" }
+//       });
 
-      const result = await response.json();
+//       const result = await response.json();
 
-      if (response.ok) {
-        form.reset();
-        successMsg.classList.remove("hidden");
-      } else {
-        console.error(result);
-        alert(result.error || "Submission failed.");
-      }
-    } catch (err) {
-      console.error(err);
-      alert("Network error. Try again later.");
-    }
+//       if (response.ok) {
+//         form.reset();
+//         successMsg.classList.remove("hidden");
+//       } else {
+//         console.error(result);
+//         alert(result.error || "Submission failed.");
+//       }
+//     } catch (err) {
+//       console.error(err);
+//       alert("Network error. Try again later.");
+//     }
 
-    spinner.classList.add("hidden");
-    btnText.textContent = "Send Message";
-  });
-});
+//     spinner.classList.add("hidden");
+//     btnText.textContent = "Send Message";
+//   });
+// });
 
 
 
