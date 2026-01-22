@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!form) return;
 
   form.addEventListener("submit", async (e) => {
-    e.preventDefault(); // 🚨 THIS STOPS REDIRECT
+    e.preventDefault();
 
     spinner.classList.remove("hidden");
     btnText.textContent = "Sending...";
@@ -80,25 +80,28 @@ document.addEventListener("DOMContentLoaded", () => {
       const response = await fetch(form.action, {
         method: "POST",
         body: new FormData(form),
-        headers: {
-          "Accept": "application/json"
-        }
+        headers: { "Accept": "application/json" }
       });
+
+      const result = await response.json();
 
       if (response.ok) {
         form.reset();
         successMsg.classList.remove("hidden");
       } else {
-        alert("❌ Failed to send message. Please try again.");
+        console.error(result);
+        alert(result.error || "Submission failed.");
       }
     } catch (err) {
-      alert("❌ Network error. Try again later.");
+      console.error(err);
+      alert("Network error. Try again later.");
     }
 
     spinner.classList.add("hidden");
     btnText.textContent = "Send Message";
   });
 });
+
 
 
 // GitHub stats
