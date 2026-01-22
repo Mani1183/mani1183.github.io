@@ -4,21 +4,6 @@ body {
   font-family: 'Inter', sans-serif;
 }
 
-#mobileMenu {
-  animation: slideDown 0.25s ease;
-}
-
-@keyframes slideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 .gradient-text {
   background: linear-gradient(90deg, #3b82f6, #8b5cf6);
   -webkit-background-clip: text;
@@ -26,45 +11,27 @@ body {
 }
 
 .section-title {
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 700;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 
 .btn-primary {
   background: #2563eb;
   padding: 0.75rem 1.5rem;
   border-radius: 0.5rem;
-  transition: all 0.3s ease;
+  transition: 0.3s;
 }
 
 .btn-primary:hover {
   background: #3b82f6;
-  box-shadow: 0 0 15px rgba(59,130,246,0.8);
-  transform: translateY(-2px);
+  box-shadow: 0 0 15px rgba(59,130,246,0.7);
 }
-
-.typewriter {
-      overflow: hidden;
-      border-right: .15em solid #3b82f6;
-      white-space: nowrap;
-      animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
-    }
-
-    @keyframes typing { from { width: 0 } to { width: 100% } }
-    @keyframes blink-caret { from, to { border-color: transparent } 50% { border-color: #3b82f6; } }
-
 
 .skill {
   background: #1f2937;
   padding: 0.6rem 1.2rem;
   border-radius: 999px;
-  transition: 0.3s;
-}
-
-.skill:hover {
-  background: #2563eb;
-  box-shadow: 0 0 10px rgba(59,130,246,0.6);
 }
 
 .input {
@@ -73,47 +40,4 @@ body {
   background: #374151;
   border-radius: 0.5rem;
   outline: none;
-}
-
-.message-box {
-  position: fixed;
-  bottom: -100px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #10b981;
-  color: white;
-  padding: 1rem 1.5rem;
-  border-radius: 0.5rem;
-  transition: 0.5s;
-}
-
-.message-box.show {
-  bottom: 20px;
-}
-
-.loader {
-  width: 18px;
-  height: 18px;
-  border: 3px solid #fff;
-  border-top-color: transparent;
-  border-radius: 50%;
-  animation: spin 0.7s linear infinite;
-}
-
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-
-/* LIGHT MODE */
-html.light body {
-  background: #f9fafb;
-  color: #111827;
-}
-
-html.light .bg-gray-800,
-html.light .bg-gray-900 {
-  background: #ffffff !important;
 }
