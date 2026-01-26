@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Manish Sharma | Portfolio</title>
+  <meta name="description" content="Manish Sharma – Full Stack Web Developer">
+  <meta name="author" content="Manish Sharma">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <link rel="icon" type="image/png" href="src/ms.png">
+  <link rel="stylesheet" href="style.css"> 
+
+  <script src="index.js" defer></script>
+</head>
+
+<body class="bg-gray-900 text-gray-100 transition-colors duration-300">
+
+<header class="sticky top-0 bg-gray-900/90 backdrop-blur border-b border-gray-800 z-50">
+  <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+    <a href="#home" class="text-2xl font-bold hover:text-sky-500 transition"><img src="src/msw.png" alt="Manish Sharma" class="w-10 h-10 inline-block mr-2 align-middle">Manish Sharma</a>
+
+    <div class="hidden md:flex items-center gap-6">
+      <a href="#home" class="hover:text-blue-400 transition">Home</a>
+      <a href="#about" class="hover:text-blue-400 transition">About</a>
+      <a href="#skills" class="hover:text-blue-400 transition">Skills</a>
+      <a href="#projects" class="hover:text-blue-400 transition">Projects</a>
+      <a href="#contact" class="hover:text-blue-400 transition">Contact</a>
+      <button id="themeToggle" class="text-xl p-2 hover:bg-gray-800  rounded-full transition">⏾</button>
+      <a id="hireMeBtn" class="btn-primary text-white inline-block" href="https://linkedin.com/in/sharmanish11" target="_blank">Hire Me</a>
+    </div>
+
+    <button id="menuBtn" class="md:hidden text-3xl">
+      <ion-icon name="menu-outline"></ion-icon>
+    </button>
+  </nav>
+
+  <div id="mobileMenu" class="hidden md:hidden bg-gray-900 border-t border-gray-800 px-6 py-4 space-y-4">
+    <a href="#home" class="block py-2">Home</a>
+    <a href="#about" class="block py-2">About</a>
+    <a href="#skills" class="block py-2">Skills</a>
+    <a href="#projects" class="block py-2">Projects</a>
+    <a href="#contact" class="block py-2">Contact</a>
+    <div class="flex items-center gap-4 pt-4 border-t border-gray-800">
+      <button id="themeToggleMobile" class="text-xl">⏾</button>
+      <a id="hireMeBtnMobile" class="btn-primary w-full text-white inline-block text-center" href="https://linkedin.com/in/sharmanish11" target="_blank">Hire Me</a>
+    </div>
+  </div>
+</header>
+
+<section id="home" class="container mx-auto px-4 py-20 flex flex-col md:flex-row items-center gap-12">
+  <div class="md:w-1/2 space-y-6 text-center md:text-left">
+    <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold typewriter">
+      Hi, I'm <span class="gradient-text">Manish Sharma</span>
+    </h1>
+    <p class="text-gray-400 text-lg">
+      Full Stack Web Developer building modern, scalable, and high-performance web applications.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 max-w-sm mx-auto md:mx-0">
+      <a href="https://github.com/mani1183" target="_blank" class="bg-gray-800 px-5 py-3 rounded-lg flex items-center justify-center gap-3 hover:bg-gray-700 transition">
+        <ion-icon name="logo-github" class="text-2xl"></ion-icon>
+        <span id="github-stats">View GitHub</span>
+      </a>
+      <a href="https://linkedin.com/in/sharmanish11" target="_blank" class="bg-blue-700 px-5 py-3 rounded-lg flex items-center justify-center gap-3 hover:bg-blue-600 transition">
+        <ion-icon name="logo-linkedin" class="text-2xl"></ion-icon>
+        <span>LinkedIn</span>
+      </a>
+    </div>
+    <a href="https://drive.google.com/file/d/137eb8_mXe0suKd8f-8gqL5CeeYRgXjkl" target="_blank" class="btn-primary inline-flex items-center justify-center mt-4 text-white">
+      <ion-icon name="download-outline" class="mr-2"></ion-icon>
+      Download Resume
+    </a>
+  </div>
+  <div class="md:w-1/2 flex justify-center">
+    <img src="https://github.com/mani1183.png" class="rounded-full border-4 border-blue-500 w-40 h-40 sm:w-52 sm:h-52 md:w-72 md:h-72 object-cover shadow-2xl">
+  </div>
+</section>
+
+<section id="about" class="py-20 px-4 bg-gray-800/30">
+  <h2 class="section-title text-center">Professional Summary</h2>
+  <div class="max-w-3xl mx-auto space-y-6">
+    <p class="text-gray-300 text-center text-lg leading-relaxed">
+      Full Stack Web Developer with hands-on experience in MERN stack development. 
+      Skilled in building responsive, user-focused applications with clean code.
+    </p>
+    <ul class="grid grid-cols-1 md:grid-cols-2 gap-4 text-gray-300">
+      <li class="flex items-center gap-2"><span>👨‍💻</span> <strong>Role:</strong> Developer intern (NEW Delhi, India)</li>
+      <li class="flex items-center gap-2"><span>📫</span> <strong>Email:</strong> manish1182003@gmail.com</li>
+      <li class="flex items-center gap-2"><span>💼</span> <strong>Project:</strong> E-commerce (React)</li>
+      <li class="flex items-center gap-2"><span>🌱</span> <strong>Learning:</strong> Advanced MERN</li>
+    </ul>
+  </div>
+</section>
+
+<section id="skills" class="py-20 px-4">
+  <h2 class="section-title text-center">Tech Stack</h2>
+
+  <div class="flex justify-center mb-12">
+    <div class="bg-gray-800/50 p-1 rounded-xl inline-flex border border-gray-700">
+      <button class="filter-btn active" data-filter="frontend">Frontend</button>
+      <button class="filter-btn" data-filter="backend">Backend</button>
+      <button class="filter-btn" data-filter="others">Others</button>
+    </div>
+  </div>
+  
+  <div id="skills-grid" class="max-w-6xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-y-12 gap-x-4 justify-items-center mt-12">
+    
+    <div class="skill-item frontend"><div class="icon-circle bg-orange-500/10"><ion-icon name="logo-html5" class="text-orange-500"></ion-icon></div><p>HTML5</p></div>
+    <div class="skill-item frontend"><div class="icon-circle bg-blue-500/10"><ion-icon name="logo-css3" class="text-blue-500"></ion-icon></div><p>CSS3</p></div>
+    <div class="skill-item frontend"><div class="icon-circle bg-yellow-400/10"><ion-icon name="logo-javascript" class="text-yellow-400"></ion-icon></div><p>JavaScript</p></div>
+    <div class="skill-item frontend"><div class="icon-circle bg-white/10"><img src="https://cdn.simpleicons.org/nextdotjs/white" alt="Next.js"></div><p>NextJS</p></div>
+    <div class="skill-item frontend"><div class="icon-circle bg-cyan-400/10"><ion-icon name="logo-react" class="text-cyan-400"></ion-icon></div><p>ReactJS</p></div>
+    <div class="skill-item frontend"><div class="icon-circle bg-sky-400/10"><img src="https://cdn.simpleicons.org/tailwindcss/06B6D4" alt="Tailwind"></div><p>Tailwind</p></div>
+    <div class="skill-item frontend"><div class="icon-circle bg-gray-400/10"><img src="https://cdn.simpleicons.org/bootstrap/563D7C" alt="Bootstrap"></div><p>Bootstrap</p></div>
+
+    <div class="skill-item backend"><div class="icon-circle bg-green-500/10"><ion-icon name="logo-nodejs" class="text-green-500"></ion-icon></div><p>NodeJS</p></div>
+    <div class="skill-item backend"><div class="icon-circle bg-gray-400/10"><img src="https://cdn.simpleicons.org/express/white" alt="Express"></div><p>ExpressJS</p></div>
+    <div class="skill-item backend"><div class="icon-circle bg-green-600/10"><img src="https://cdn.simpleicons.org/mongodb/47A248" alt="MongoDB"></div><p>MongoDB</p></div>
+    <div class="skill-item backend"><div class="icon-circle bg-indigo-500/10"><ion-icon name="logo-laravel" class="text-indigo-500"></ion-icon></div><p>PHP</p></div>
+
+    <div class="skill-item others"><div class="icon-circle bg-blue-500/10"><ion-icon name="logo-github" class="text-white"></ion-icon></div><p>GitHub</p></div>
+    <div class="skill-item others"><div class="icon-circle bg-orange-600/10"><img src="https://cdn.simpleicons.org/git/F05032" alt="Git"></div><p>Git</p></div>
+    <div class="skill-item others"><div class="icon-circle bg-blue-400/10"><img src="https://cdn.simpleicons.org/google/4285F4" alt="Googling"></div><p>Googling</p></div>    
+
+  </div>
+</section>
+
+
+<section id="projects" class="py-20 px-4 bg-gray-800/20">
+  <h2 class="section-title text-center">Projects</h2>
+  <div id="projects-container" class="max-w-6xl mx-auto grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 mt-12">
+    <p class="col-span-full text-center text-gray-400">Loading GitHub projects...</p>
+  </div>
+</section>
+
+<section id="experience" class="py-20 px-4 bg-gray-900">
+  <h2 class="section-title text-center">Experience</h2>
+  
+  <div class="flex justify-center mb-12">
+    <div class="bg-gray-800/50 p-1 rounded-xl inline-flex border border-gray-700">
+      <button class="toggle-btn active" data-target="exp-content">Experience</button>
+      <button class="toggle-btn" data-target="edu-content">Education</button>
+    </div>
+  </div>
+
+  <div class="max-w-4xl mx-auto relative timeline-container">
+    <div class="timeline-line"></div>
+    
+    <div id="exp-content" class="timeline-group">
+      <div class="timeline-item left">
+        <div class="timeline-dot"><ion-icon name="briefcase"></ion-icon></div>
+        <div class="timeline-card">
+          <h3>Full Stack Developer intern</h3>
+          <p class="text-blue-400">Unlink Technologies Private limited</p>
+          <span class="text-sm text-gray-500">Sep 2025 - Dec 2025</span>
+          <ul class="mt-2 text-gray-400 text-sm list-disc ml-4">
+            <li>Noida, Uttar Pradesh, India · On-site.</li>
+            <li>Contributed to Web Development upgrades.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div id="edu-content" class="timeline-group hidden">
+      <div class="timeline-item left">
+        <div class="timeline-dot"><ion-icon name="school"></ion-icon></div>
+        <div class="timeline-card">
+          <h3>Bachelor of Technology - Computer Science and Engineering</h3>
+          <p class="text-blue-400">Guru Gobind Singh Indraprastha University</p>
+          <span class="text-sm text-gray-500">2022 – 2025</span>
+        </div>
+        </div>
+        <div class="timeline-item right">
+           <div class="timeline-dot"><ion-icon name="school"></ion-icon></div>
+        <div class="timeline-card">
+          <h3>Diploma in Information Technology</h3>
+          <p class="text-blue-400">Integrated Institute of Technology, Delhi</p>
+          <span class="text-sm text-gray-500">2019 – 2022</span>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="py-20 px-4 bg-gray-800/30">
+  <h2 class="section-title text-center">Contact Me</h2>
+  <div class="max-w-2xl mx-auto bg-gray-800 p-8 rounded-2xl shadow-xl card-bg">
+    <span>
+      Get in touch My inbox is always open! 💌 Whether you've got a burning question or want to drop a friendly 
+      "hello", I'm all ears!👂 Let's chat! 🎉
+    </span><br> <br>
+    <form id="contact-form" class="space-y-6">
+      <input name="name" class="input" placeholder="Your Name" required>
+      <input name="email" type="email" class="input" placeholder="Your Email" required>
+      <textarea name="message" class="input" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit" class="btn-primary w-full text-white font-bold py-4">Send Message</button>
+    </form>
+    <p id="form-success" class="hidden text-green-400 text-center mt-4 font-semibold">
+      ✅ Thank you! Your message has been sent successfully!
+    </p>
+  </div>
+</section>
+
+<footer class="bg-gray-900 border-t border-gray-800 py-10 text-center">
+  <div class="flex flex-row justify-center items-center gap-4">
+  <a href="https://linkedin.com/in/sharmanish11" target="_blank" class="social-bubble"><ion-icon name="logo-linkedin"></ion-icon></a>
+  <a href="https://github.com/mani1183" target="_blank" class="social-bubble"><ion-icon name="logo-github"></ion-icon></a>
+  <a href="https://www.instagram.com/_.manisharma/" target="_blank" class="social-bubble"><ion-icon name="logo-instagram"></ion-icon></a>
+  <a href="https://x.com/Manish_118" target="_blank" class="social-bubble"><ion-icon name="logo-twitter"></ion-icon></a>
+</div><br>
+  <p class="text-gray-500">© 2026 Manish Sharma. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
