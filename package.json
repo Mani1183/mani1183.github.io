@@ -1,5 +1,5 @@
 {
-  "name": "portfolio-react",
+  "name": "portfolio",
   "private": true,
   "version": "0.0.0",
   "homepage": "https://mani1183.github.io/",
@@ -11,6 +11,8 @@
     "preview": "vite preview",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
+
+    
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
