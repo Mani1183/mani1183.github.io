@@ -26,19 +26,19 @@ export default function Navbar({ toggleTheme, isDark }) {
         </a>
 
         <div className="hidden md:flex items-center gap-6">
-          <a href="#home" onClick={scrollToTop} className="hover:text-[var(--accent)] transition">
+          <a href="#home" onClick={scrollToTop} className="px-4 py-2 rounded-full text-gray-300 hover:text-white hover:bg-white/10 transition-all">
             Home
           </a>
-          <a href="#about" className="hover:text-[var(--accent)] transition">
+          <a href="#about" className="px-4 py-2 rounded-full text-gray-300 hover:text-white hover:bg-white/10 transition-all">
             About
           </a>
-          <a href="#skills" className="hover:text-[var(--accent)] transition">
-            Skills
-          </a>
-          <a href="#projects" className="hover:text-[var(--accent)] transition">
+          <a href="#projects" className="px-4 py-2 rounded-full text-gray-300 hover:text-white hover:bg-white/10 transition-all">
             Projects
           </a>
-          <a href="#contact" className="hover:text-[var(--accent)] transition">
+          <a href="#skills" className="px-4 py-2 rounded-full text-gray-300 hover:text-white hover:bg-white/10 transition-all">
+            Skills
+          </a>
+          <a href="#contact" className="px-4 py-2 rounded-full text-gray-300 hover:text-white hover:bg-white/10 transition-all">
             Contact
           </a>
           <button
@@ -50,10 +50,9 @@ export default function Navbar({ toggleTheme, isDark }) {
           <a
             id="hireMeBtn"
             className="btn-primary text-white inline-block"
-            href="https://linkedin.com/in/sharmanish11"
-            target="_blank"
+            href="#get-in-touch"
           >
-            Hire Me
+            Get In Touch
           </a>
         </div>
 
@@ -73,11 +72,11 @@ export default function Navbar({ toggleTheme, isDark }) {
         <a href="#about" className="block py-2" onClick={() => setOpen(false)}>
           About
         </a>
-        <a href="#skills" className="block py-2" onClick={() => setOpen(false)}>
-          Skills
-        </a>
         <a href="#projects" className="block py-2" onClick={() => setOpen(false)}>
           Projects
+        </a>
+        <a href="#skills" className="block py-2" onClick={() => setOpen(false)}>
+          Skills
         </a>
         <a href="#contact" className="block py-2" onClick={() => setOpen(false)}>
           Contact
@@ -88,11 +87,11 @@ export default function Navbar({ toggleTheme, isDark }) {
           </button>
           <a
             className="btn-primary w-full text-white inline-block text-center"
-            href="https://linkedin.com/in/sharmanish11"
+            href="#get-in-touch"
             target="_blank"
             onClick={() => setOpen(false)}
           >
-            Hire Me
+            Get In Touch
           </a>
         </div>
       </div>

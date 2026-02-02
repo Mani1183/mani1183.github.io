@@ -21,8 +21,12 @@ export default function Hero() {
           Hi, I'm <span className="gradient-text">Manish Sharma</span>
         </h1>
 
+        <p className="text-xl sm:text-2xl md:text-3xl font-extrabold text-gray-400">
+        Full Stack Web Developer
+        </p>
+
         <p className="text-gray-400 text-lg">
-          Full Stack Web Developer building modern, scalable, and high-performance web applications.
+          I create modern, responsive web applications with React.js and JavaScript. Passionate about building user-friendly interfaces and contributing to meaningful projects.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 max-w-sm mx-auto md:mx-0">
@@ -43,14 +47,6 @@ export default function Hero() {
             <span>LinkedIn</span>
           </a>
         </div>
-        <a
-          href="https://drive.google.com/file/d/137eb8_mXe0suKd8f-8gqL5CeeYRgXjkl"
-          target="_blank"
-          className="btn-primary inline-flex items-center justify-center mt-4 text-white"
-        >
-          <ion-icon name="download-outline" className="mr-2"></ion-icon>
-          Download Resume
-        </a>
       </div>
     </section>
   );

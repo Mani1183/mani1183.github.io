@@ -68,9 +68,9 @@ export default function App() {
       <Navbar toggleTheme={toggleTheme} isDark={isDark} />
       <Hero />
       <About />
-      <Skills />
-      <Projects />
-      <Experience />
+      <Experience />      
+      <Projects /> 
+      <Skills />     
       <Contact />
       <Footer />
     </div>

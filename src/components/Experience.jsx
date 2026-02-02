@@ -5,7 +5,14 @@ export default function Experience() {
 
   return (
     <section id="experience" className="py-20 px-4 experience-section">
-      <h2 className="section-title text-center">Experience</h2>
+      <div className="text-center mb-16">
+        <h2 className="section-title mb-4">
+          Experience & <span className="gradient-text">Education</span>
+        </h2>
+        <p className="text-gray-400 max-w-2xl mx-auto text-lg leading-relaxed">
+          My journey in frontend development and programming
+        </p>
+      </div>
 
       <div className="flex justify-center mb-12">
         <div className="toggle-container p-1 rounded-xl inline-flex border border-gray-700">

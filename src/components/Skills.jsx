@@ -123,7 +123,9 @@ export default function Skills() {
 
   return (
     <section id="skills" className="py-20 px-4">
-      <h2 className="section-title text-center">Tech Stack</h2>
+      <h2 className="section-title text-center">
+        Technical <span className="gradient-text">Skills</span>
+      </h2>
 
       <div className="flex justify-center mb-12">
         <div className="bg-gray-800/50 p-1 rounded-xl inline-flex border border-gray-700">

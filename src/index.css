@@ -97,7 +97,7 @@ body {
 .section-title {
   font-size: clamp(2.5rem, 5vw, 3.5rem);
   font-weight: 800;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
   color: #fff;
   letter-spacing: -0.02em;
 }
@@ -462,6 +462,7 @@ html.light .navbar-header {
   color: white;
   transition: all var(--t-mid) var(--ease-smooth);
   font-size: 1rem;
+  font-family: inherit;
 }
 
 .input:focus {
@@ -513,8 +514,12 @@ html.light #form-success {
 
 html.light .text-gray-300,
 html.light .text-gray-400 {
-  color: #394454;
-  /* slate-600 for better contrast on white */
+  color: #475569;
+  /* slate-600 */
+}
+
+html.light .bg-white\/5 {
+  background-color: rgba(0, 0, 0, 0.05);
 }
 
 /* ================= Mobile Menu ================= */
@@ -522,23 +527,19 @@ html.light .text-gray-400 {
 .mobile-menu {
   background-color: transparent;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
-  /* border-gray-800 */
 }
 
 .mobile-menu-footer {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
-  /* border-gray-800 */
 }
 
 html.light .mobile-menu {
   background-color: transparent;
   border-color: rgba(0, 0, 0, 0.05);
-  /* Match navbar light border */
 }
 
 html.light .mobile-menu-footer {
   border-color: rgba(0, 0, 0, 0.05);
-  /* Match navbar light border */
 }
 
 /* ================= Experience Section ================= */
@@ -572,6 +573,33 @@ html.light .text-gray-500 {
 html.light .icon-circle {
   background-color: #ffffff;
   border-color: #cbd5e1;
-  /* slate-300 */
   box-shadow: 0 4px 6px -1px rgba(0, 123, 255, 0.321);
+}
+
+/* ================= Navigation Pills ================= */
+.nav-pill {
+  color: #cbd5e1; /* slate-300 */
+  background: transparent;
+}
+.nav-pill:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.1);
+}
+.nav-pill.active {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 6px -1px rgba(255, 255, 255, 0.05);
+}
+
+html.light .nav-pill {
+  color: #475569; /* slate-600 */
+}
+html.light .nav-pill:hover {
+  color: #0f172a; /* slate-900 */
+  background: rgba(0, 0, 0, 0.05);
+}
+html.light .nav-pill.active {
+  color: #ffffff;
+  background: var(--primary);
+  box-shadow: 0 4px 6px -1px rgba(34, 93, 255, 0.3);
 }
