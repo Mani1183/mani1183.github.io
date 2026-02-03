@@ -7,7 +7,7 @@ export default function Hero() {
       {/* LEFT SIDE */}
       <div className="md:w-1/2 flex justify-center">
         <img
-          src="https://github.com/mani1183.png"
+          src="https://github.com/manishk-sharma.png"
           className="rounded-full border-4 border-transparent 
                      w-40 h-40 sm:w-52 sm:h-52 md:w-72 md:h-72 
                      object-cover shadow-2xl"
