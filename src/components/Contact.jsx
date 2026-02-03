@@ -96,7 +96,7 @@ export default function Contact() {
                   <a href="https://linkedin.com/in/sharmanish11" target="_blank" className="social-bubble">
                     <ion-icon name="logo-linkedin"></ion-icon>
                   </a>
-                  <a href="https://github.com/mani1183" target="_blank" className="social-bubble">
+                  <a href="https://github.com/manishk-sharma" target="_blank" className="social-bubble">
                     <ion-icon name="logo-github"></ion-icon>
                   </a>
                   <a href="https://www.instagram.com/_.manisharma/" target="_blank" className="social-bubble">
@@ -144,7 +144,7 @@ export default function Contact() {
               <p className="text-gray-400 text-base mb-6">
                 Download my resume to see my complete work history and projects.
               </p>
-              <a href="https://drive.google.com/file/d/1vT6zLIO6hPicoaU38VU3oxBbqu1bbL1M/view?usp=sharing"
+              <a href="https://drive.google.com/file/d/1iIiQWdw6pLqsQDLZ59Q3tjnUk5KUFiA4/view?usp=sharing"
                 target="_blank" download className="w-full py-3 rounded-xl flex items-center justify-center gap-2 border border-white/10 text-white hover:bg-white/5 transition-colors bg-blue-700 hover:bg-blue-800">
                 <ion-icon name="download-outline"></ion-icon>
                 Download Resume
