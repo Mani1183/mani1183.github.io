@@ -22,7 +22,7 @@ export default function Hero() {
         </h1>
 
         <p className="text-xl sm:text-2xl md:text-3xl font-extrabold text-gray-400">
-        Full Stack Web Developer
+          Full Stack Web Developer
         </p>
 
         <p className="text-gray-400 text-lg">
